@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TypeFlow — Typing Speed Test</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="logo">
+        <span class="logo-icon">⌨</span>
+        <span>TypeFlow</span>
+      </div>
+
+      <div class="controls">
+        <div class="mode-group">
+          <button class="mode active" data-time="15">15s</button>
+          <button class="mode" data-time="30">30s</button>
+          <button class="mode" data-time="60">60s</button>
+          <button class="mode" data-time="120">120s</button>
+        </div>
+
+        <div class="sound-group">
+          <label for="sound-select">Sound</label>
+          <select id="sound-select">
+            <option value="off">Off</option>
+            <option value="soft" selected>Soft Click</option>
+            <option value="mechanical">Mechanical</option>
+            <option value="typewriter">Typewriter</option>
+            <option value="bubble">Bubble</option>
+          </select>
+
+          <input
+            type="range"
+            id="volume"
+            min="0"
+            max="100"
+            value="45"
+            title="Volume"
+          />
+        </div>
+      </div>
+    </header>
+
+    <section class="stats">
+      <div class="stat">
+        <span class="stat-label">WPM</span>
+        <span class="stat-value" id="wpm">0</span>
+      </div>
+
+      <div class="stat">
+        <span class="stat-label">Accuracy</span>
+        <span class="stat-value" id="accuracy">100%</span>
+      </div>
+
+      <div class="stat">
+        <span class="stat-label">Time</span>
+        <span class="stat-value" id="timer">15</span>
+      </div>
+
+      <div class="stat">
+        <span class="stat-label">Best</span>
+        <span class="stat-value" id="best">—</span>
+      </div>
+    </section>
+
+    <section class="typing-area" id="typing-area" tabindex="0">
+      <div id="words" class="words"></div>
+      <div class="caret" id="caret"></div>
+    </section>
+
+    <section class="result hidden" id="result">
+      <h2>Test Complete</h2>
+
+      <div class="result-grid">
+        <div>
+          <span>WPM</span>
+          <strong id="final-wpm">0</strong>
+        </div>
+
+        <div>
+          <span>Accuracy</span>
+          <strong id="final-accuracy">0%</strong>
+        </div>
+
+        <div>
+          <span>Characters</span>
+          <strong id="final-chars">0</strong>
+        </div>
+
+        <div>
+          <span>Time</span>
+          <strong id="final-time">0s</strong>
+        </div>
+      </div>
+
+      <button id="restart-button">Try Again</button>
+    </section>
+
+    <footer class="footer">
+      <p>Press <kbd>Tab</kbd> to restart</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
